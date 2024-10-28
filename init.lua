@@ -23,13 +23,6 @@ require('render-markdown').setup({
 	file_types = { 'markdown', 'quarto' },
 })
 
-require('lualine').setup {
-    options = {
-        theme = "catppuccin"
-        -- ... the rest of your lualine config
-    }
-}
-
 require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
@@ -127,7 +120,7 @@ vim.cmd.colorscheme "catppuccin"
 local wk = require("which-key")
 wk.add({
 	{ "<leader>F", "<cmd>Telescope live_grep theme=ivy<cr>", desc = "Find Text", nowait = true, remap = false },
-    		{ "<leader>P", "<cmd>lua require('telescope').extensions.projects.projects()<cr>", desc = "Projects", nowait = true, remap = false },
+    		{ "<leader>P", "<cmd>lua require'telescope'.extensions.project.project{}<cr>", desc = "Projects", nowait = true, remap = false },
     		{ "<leader>b", "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>", desc = "Buffers", nowait = true, remap = false },
     		{ "<leader>c", "<cmd>Bdelete!<CR>", desc = "Close Buffer", nowait = true, remap = false },
     		{ "<leader>e", "<cmd>Neotree<cr>", desc = "Explorer", nowait = true, remap = false },
